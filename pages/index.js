@@ -11,7 +11,8 @@ export default function Home() {
           <h1>Cookie Stand Admin</h1>
       </header>
      <main>
-       <div className="mb-7 justify-between p-4 bg-indigo-200 w-3/5 m-auto">
+       <div className="mb-7 justify-between p-4 bg-indigo-200 w-3/5 m-auto rounded-lg">
+         <h1 className="text-center text-2xl mb-4">Create Cookie Stand</h1>
           <form className="flex w-1/2 p-2 mx-auto bg-indigo-600">
             <label for="location" className="p-2 text-gray-50">Location:</label>
             <input name="location" id="location"/>
@@ -34,10 +35,12 @@ export default function Home() {
         </div>
 
         <p className="text-center">Report Table Coming Soon...</p>
+        <p className="text-center my-8">JSON Placeholder...</p>
+
      </main>
 
      <footer className="p-4 bg-indigo-900 text-gray-50">
-      <p>2021</p>
+      <p>&copy; 2021</p>
       </footer>
     </div>
   )
