@@ -1,11 +1,19 @@
 // import Head from 'next/head'
 import Link from 'next/link'
+import { replies } from '../data'
+import { useState } from 'react'
+
 
 export default function Home() {
+  const[reply, setReply] = useState()
 
   function createbtnHandler(event){
     event.preventDefault();
-    alert(event.target.location.value);
+
+
+    const randomReply = replies;
+
+    setReply(randomReply);
   }
 
   return (
