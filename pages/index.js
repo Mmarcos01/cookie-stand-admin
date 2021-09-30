@@ -1,6 +1,13 @@
 // import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Home() {
+
+  function createbtnHandler(event){
+    event.preventDefault();
+    alert(event.target.location.value);
+  }
+
   return (
     <div>
       <head>
@@ -9,11 +16,16 @@ export default function Home() {
       </head>
       <header className="flex items-center justify-between p-4 bg-indigo-900 text-gray-50 text-2xl mb-7">
           <h1>Cookie Stand Admin</h1>
+          <nav className="flex items-center justify-left space-x-10">
+          <Link href="/about">
+            <a className="text-xl" href="about">About</a>
+          </Link>
+          </nav>
       </header>
      <main>
        <div className="mb-7 justify-between p-4 bg-indigo-200 w-3/5 m-auto rounded-lg">
          <h1 className="text-center text-2xl mb-4">Create Cookie Stand</h1>
-          <form className="flex w-1/2 p-2 mx-auto bg-indigo-600">
+          <form onSubmit={ createbtnHandler } className="flex w-1/2 p-2 mx-auto bg-indigo-600">
             <label for="location" className="p-2 text-gray-50">Location:</label>
             <input name="location" id="location"/>
             <button className="px-2 py-1 bg-indigo-900 text-gray-50">Create</button>
