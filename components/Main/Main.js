@@ -1,4 +1,5 @@
 import CreateForm from './CreateForm'
+import ReportTable from './ReportTable'
 
 export default function Main() {
 
@@ -8,18 +9,7 @@ export default function Main() {
           <h1 className="text-center text-2xl mb-4">Create Cookie Stand</h1>
            <CreateForm />
            
-           <table className="w-1/2 mx-auto my-4">
-               <tr>
-                 <th>Minimum Customers per Hour</th>
-                 <th>Maximum Customers per Hour</th>
-                 <th>Average Cookies per Sale</th>
-               </tr>
-               <tr>
-                 <td className="text-center border border-indigo-300 bg-gray-50">x</td>
-                 <td className="text-center border border-indigo-300 bg-gray-50">x</td>
-                 <td className="text-center border border-indigo-300 bg-gray-50">x</td>
-               </tr>
-               </table>
+           <ReportTable />
  
          </div>
  
