@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { replies } from '../data'
 import { useState } from 'react'
-
+import Footer from '../components/Footer/footer'
 
 export default function Home() {
   const[reply, setReply] = useState()
@@ -26,7 +26,7 @@ export default function Home() {
           <h1>Cookie Stand Admin</h1>
           <nav className="flex items-center justify-left space-x-10">
           <Link href="/about">
-            <a className="text-xl" href="about">About</a>
+            <a className="text-xl" href="about">Overview</a>
           </Link>
           </nav>
       </header>
@@ -59,9 +59,8 @@ export default function Home() {
 
      </main>
 
-     <footer className="p-4 bg-indigo-900 text-gray-50">
-      <p>&copy; 2021</p>
-      </footer>
+      <Footer />
+
     </div>
   )
 }
