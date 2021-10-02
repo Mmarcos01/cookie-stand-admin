@@ -3,6 +3,7 @@
 Ceate an app using Next.js and style using Tailwind CSS.
 
 ## Feature Tasks
+
 pages/Index.js should…
 - Have \<Head> component with page title set to Cookie Stand Admin
 - Have a header component that matches spec.
