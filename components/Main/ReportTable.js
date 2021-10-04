@@ -1,9 +1,10 @@
 import { hours } from '../../data'
+import { hourly_sales } from '../../data'
 
 export default function ReportTable(props) {
-  // if (props.tableData.length === 0) {
-  //   return <h2 className='my-8 text-xl text-center'>No Cookie Stands Available</h2>;
-  // }
+  if (props.tableData.length === 0) {
+    return <h2 className='my-8 text-xl text-center'>No Cookie Stands Available</h2>;
+  }
     return(
         <table className="w-1/2 mx-auto my-4">
         <thead className='bg-gray-800 text-white'>
@@ -21,10 +22,14 @@ export default function ReportTable(props) {
         </thead>
     
         {props.tableData.map(item => {
-              return(<tr className="odd:bg-gray-200">
-          <td className="text-center border border-indigo-300 bg-gray-50">x</td>
-          <td className="text-center border border-indigo-300 bg-gray-50">x</td>
-          <td className="text-center border border-indigo-300 bg-gray-50">x</td>
+              return(<tr className="odd:bg-gray-400">
+              {hourly_sales.map((sales) => {
+                return (
+                  <th className='px-3'>
+                    {sales}
+                  </th>
+                );
+              })}
         </tr>)
         })}
         </table>
