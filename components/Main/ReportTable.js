@@ -12,9 +12,7 @@ export default function ReportTable(props) {
             <th className='p-4 text-left'>Location</th>
             {hours.map((hour) => {
               return (
-                <th className='px-3'>
-                  {hour}
-                </th>
+                <th className='px-3'> {hour} </th>
               );
             })}
             <th className='px-4'>Totals</th>
@@ -25,9 +23,7 @@ export default function ReportTable(props) {
               return(<tr className="odd:bg-gray-400">
               {hourly_sales.map((sales) => {
                 return (
-                  <th className='px-3'>
-                    {sales}
-                  </th>
+                  <th className='px-3'> {sales} </th>
                 );
               })}
         </tr>)

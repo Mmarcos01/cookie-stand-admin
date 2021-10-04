@@ -19,22 +19,13 @@ export default function CookieStandAdmin() {
     console.log('location', location)
     setLocations([...locations, location]);
   }
-
-  function getData(){
-    if (locations.length == 0) {
-      return '';
-    }
-
-    return locations[locations.length -1].reply;
-
-  }
   
     return (
       <div>
         <Head />
         <Header />
-        <Main givenLocation={locationCreateHandler} tableData={locations}/>
-        <Footer locationCount={locations.length}/>
+        <Main givenLocation={locationCreateHandler} tableData={locations} />
+        <Footer locationCount={locations.length} />
       </div>
     )
   }
