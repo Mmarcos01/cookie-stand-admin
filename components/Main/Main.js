@@ -1,57 +1,50 @@
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "'react-redux";
-import { changeCount } from "../reduxStore/countSlice";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { changeCount } from "../../redux-store/countSlice";
 import CreateForm from "./CreateForm";
 import ReportTable from "./ReportTable";
 import { hours } from "../../data";
-import { hourly_sales } from "../../data";
+// import { hourly_sales } from "../../data";
 
 export default function Main() {
   const [reports, setReports] = useState([]);
+  const dispatch = useDispatch();
 
-  const updateReport = (obj) => {
-    let outputResult = calculate(obj);
-    let newReport = [...reports, outputResult];
-    dispatch(changeCount(newReport.length));
-    setReports(newReport);
+  const updateReport = (formObj) => {
+    let result = calculate(formObj);
+    let newReports = [...reports, result];
+    dispatch(changeCount(newReports.length));
+    setReports(newReports);
   };
 
   const calculate = (obj) => {
-    let outputResult = {
+    const result = {
       location: obj.location,
-      hourly_sales: generateCookiePerHour(
+      hourly_sale: generateCookiePerHour(
         obj.minCust,
         obj.maxCust,
         obj.avgCookie
       ),
     };
-    return outputResult;
+    return result;
   };
 
-  function generateRandomNumber(min, max) {
+  function generateRandomNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  function generateCookiePerHour(minCust, maxCust, avgCookies) {
-    let cookieSales = [];
-    for (var i = 0; i < 14; i++) {
-      cookieSales.push();
-      Math.round(generateRandomNumber(minCust, maxCust) * avgCookies);
+  function generateCookiePerHour(minCust, maxCust, avgCookie) {
+    let cookieSaleEveryHour = [];
+    for (let i = 0; i < 14; i++) {
+      cookieSaleEveryHour.push(generateRandomNum(minCust, maxCust) * avgCookie);
     }
-    return cookieSales;
+    return cookieSaleEveryHour;
   }
 
   return (
-    <main>
-      <div className="justify-between w-3/5 p-4 m-auto bg-indigo-200 rounded-lg mb-7">
-        <h1 className="mb-4 text-2xl text-center">Create Cookie Stand</h1>
-        <CreateForm updateReport={updateReport} />
-        <ReportTable
-          hours={hours}
-          hourly_sales={hourly_sales}
-          reports={reports}
-        />
-      </div>
-    </main>
+    <div>
+      <CreateForm updateReport={updateReport} />
+      <ReportTable hours={hours} reports={reports} />
+    </div>
   );
 }

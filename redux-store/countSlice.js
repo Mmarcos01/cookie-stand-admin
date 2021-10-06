@@ -4,15 +4,16 @@ const initialState = {
   value: 0,
 };
 
-const counterSlice = createSlice({
-  name: "storeCount",
+const countSlice = createSlice({
+  name: "count",
   initialState,
-  reducer: {
+  reducers: {
     changeCount(state, action) {
       state.value = action.payload;
     },
   },
 });
 
-export const { changeCount } = counterSlice.actions;
-export default counterSlice.reducer;
+const { actions, reducer } = countSlice;
+export const { changeCount } = actions;
+export default reducer;

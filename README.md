@@ -14,4 +14,8 @@ pages/Index.js should…
 
 ## Collaborators
 
-[Davee Sok](https://github.com/daveeS987)
+- [Prabin Singh](https://github.com/prabin544)
+- [Davee Sok](https://github.com/daveeS987)
+- [Garfield Grant](https://github.com/Marleyman876)
+- [Daniel Dills](https://github.com/danieldills)
+- [Wondwosen](https://github.com/WondwosenTsige)
