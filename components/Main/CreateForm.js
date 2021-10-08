@@ -1,7 +1,9 @@
 import { useState } from "react";
+import useResource from "../../hooks/useResource";
 
-export default function CreateForm(props) {
+export default function CreateForm() {
   const [formItems, setFormItems] = useState({});
+  const { createResource } = useResource();
 
   function handleChange(event) {
     const newFormItems = {
@@ -13,7 +15,7 @@ export default function CreateForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.updateReport(formItems);
+    createResource(formItems);
   }
 
   return (
