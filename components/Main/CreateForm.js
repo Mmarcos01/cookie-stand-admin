@@ -1,7 +1,9 @@
 import { useState } from "react";
+import useResource from "../../hooks/useResource";
 
-export default function CreateForm(props) {
+export default function CreateForm() {
   const [formItems, setFormItems] = useState({});
+  const { createResource } = useResource();
 
   function handleChange(event) {
     const newFormItems = {
@@ -13,7 +15,8 @@ export default function CreateForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.updateReport(formItems);
+    // console.log("this is form items", formItems);
+    createResource(formItems);
   }
 
   return (
@@ -24,20 +27,26 @@ export default function CreateForm(props) {
         </label>
         <input name="location" type="text" onChange={handleChange} />
 
-        <label for="minCust" className="p-2 text-gray-50">
-          Minimum Customers per Hour:
-        </label>
-        <input name="minCust" type="number" onChange={handleChange} />
+        <label className="p-2 text-gray-50">Minimum Customers per Hour:</label>
+        <input
+          name="minimum_customers_per_hour"
+          type="number"
+          onChange={handleChange}
+        />
 
-        <label for="maxCust" className="p-2 text-gray-50">
-          Maximum Customers per Hour:
-        </label>
-        <input name="maxCust" type="number" onChange={handleChange} />
+        <label className="p-2 text-gray-50">Maximum Customers per Hour:</label>
+        <input
+          name="maximum_customers_per_hour"
+          type="number"
+          onChange={handleChange}
+        />
 
-        <label for="avgCookies" className="p-2 text-gray-50">
-          Average Cookies per Sale:
-        </label>
-        <input name="avgCookie" type="number" onChange={handleChange} />
+        <label className="p-2 text-gray-50">Average Cookies per Sale:</label>
+        <input
+          name="average_cookies_per_sale"
+          type="number"
+          onChange={handleChange}
+        />
 
         <button className="px-2 py-1 bg-indigo-900 text-gray-50">Create</button>
       </form>

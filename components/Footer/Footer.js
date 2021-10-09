@@ -1,11 +1,14 @@
-import { useSelector } from "react-redux";
+import useResource from "../../hooks/useResource";
 
 export default function Footer() {
-  const count = useSelector((state) => state.count.value);
+  const { resources } = useResource();
   return (
     <footer className="p-4 bg-indigo-900 text-gray-50">
       <nav className="flex items-center justify-left space-x-10">
-        <p className="text-xl">{count} Locations Worldwide</p>
+        <p className="text-xl">
+          {" "}
+          {resources ? resources.length : 0} Locations Worldwide
+        </p>
       </nav>
     </footer>
   );
