@@ -15,7 +15,6 @@ export default function CreateForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // console.log("this is form items", formItems);
     createResource(formItems);
   }
 
