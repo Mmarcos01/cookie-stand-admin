@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.4",
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.22.0",
     "jsonwebtoken": "^8.5.1",

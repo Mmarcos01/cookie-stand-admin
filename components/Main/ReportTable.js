@@ -1,10 +1,9 @@
-import { Button } from "react";
-import React from "react";
+import { TrashIcon } from "@heroicons/react/outline";
 import useResource from "../../hooks/useResource";
 
 export default function ReportTable({ hours, sales }) {
   const { deleteResource, loading } = useResource();
-
+  console.log("this is sales", sales);
   if (sales && sales.length === 0) {
     return <h2 className="text-center">No Cookie Stand Available</h2>;
   }
@@ -28,15 +27,20 @@ export default function ReportTable({ hours, sales }) {
         {sales &&
           sales.map((store) => {
             return (
-              <tr className="odd:bg-gray-400" key={store.id}>
-                <td>{store.location}</td>
-                <Button
-                  className="w-5"
-                  onClick={() => deleteResource(store.id)}
-                />
+              <tr className="odd:bg-gray-400 even:bg-gray-300" key={store.id}>
+                <td className="flex justify-between p-2 text-left">
+                  {store.location}
+                  <TrashIcon
+                    className="w-5"
+                    onClick={() => deleteResource(store.id)}
+                  />
+                </td>
+
+                {store.hourly_sales.map((sale) => {
+                  return <td>{sale}</td>;
+                })}
                 <td>
-                  {" "}
-                  {store.hourly_sale.reduce((acc, cur) => {
+                  {store.hourly_sales.reduce((acc, cur) => {
                     return acc + cur;
                   }, 0)}
                 </td>

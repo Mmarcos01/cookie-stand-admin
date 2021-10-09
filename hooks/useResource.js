@@ -25,6 +25,7 @@ export default function useResource() {
 
   async function createResource(info) {
     try {
+      console.log("this is info", info);
       await axios.post(apiUrl, info, config());
       mutate(); // mutate causes complete collection to be refetched
     } catch (error) {

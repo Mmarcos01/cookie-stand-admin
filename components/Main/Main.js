@@ -11,7 +11,7 @@ export default function Main() {
   // const dispatch = useDispatch();
 
   const { resources, loading } = useResource();
-
+  console.log("this is resources", resources);
   // const updateReport = (formObj) => {
   //   let result = calculate(formObj);
   //   let newReports = [...reports, result];
