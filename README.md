@@ -12,6 +12,11 @@ pages/Index.js should…
 - Have a \<footer> component that matches spec.
 - Style app using TailwindCSS utility classes.
 
+## Deployment
+
+Deployed on Vercel
+[Cookie Stand](https://cookie-stand-admin-indol-xi.vercel.app/)
+
 ## Collaborators
 
 - [Prabin Singh](https://github.com/prabin544)
